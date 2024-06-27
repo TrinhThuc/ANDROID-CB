@@ -136,8 +136,8 @@ class NewTaskFragment : Fragment() {
         val chip = chipGroup.findViewById(id) as Chip
 
         when (chip.text) {
-            "Low" -> taskInfo.priority = 0
-            "Medium" -> taskInfo.priority = 1
+            "Thấp" -> taskInfo.priority = 0
+            "Trung bình" -> taskInfo.priority = 1
             else -> taskInfo.priority = 2
         }
     }
@@ -145,7 +145,7 @@ class NewTaskFragment : Fragment() {
     private fun listenToCategoryClick(chipGroup: ChipGroup, i: List<Int>) {
         val id = i[0]
         val chip = chipGroup.findViewById(id) as Chip
-        if(chip.text.toString() == "+ Add New Category"){
+        if(chip.text.toString() == "+ Thêm danh mục"){
             displayCategoryChooseDialog()
             isCategorySelected = false
         }else {

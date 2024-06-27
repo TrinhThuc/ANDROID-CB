@@ -35,7 +35,7 @@ class RebootBroadcastReceiver : BroadcastReceiver(){
         val pendingIntent = PendingIntent.getBroadcast(context, taskInfo.id, intent, PendingIntent.FLAG_IMMUTABLE)
         val mainActivityIntent = Intent(context, MainActivity::class.java)
         val basicPendingIntent = PendingIntent.getActivity(context, taskInfo.id, mainActivityIntent, PendingIntent.FLAG_IMMUTABLE)
-        val clockInfo = AlarmManager.AlarmClockInfo(taskInfo.date.time, basicPendingIntent)
+        val clockInfo = AlarmManager.AlarmClockInfo(taskInfo.date.time - 10 * 60 * 1000, basicPendingIntent)
         alarmManager.setAlarmClock(clockInfo, pendingIntent)
     }
 
